@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Guilherme Ady - Gestor de Tráfego Especialista em Meta Ads e Google Ads desde 2019.">
+    <title>Guilherme Ady | Gestão de Tráfego</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        /* --- RESET E ESTILOS GERAIS --- */
+        :root {
+            --primary-color: #2563EB; /* Azul confiável */
+            --accent-color: #10B981; /* Verde conversão */
+            --dark-bg: #0F172A;
+            --darker-bg: #020617;
+            --text-light: #F8FAFC;
+            --text-gray: #94A3B8;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--dark-bg);
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        a { text-decoration: none; color: inherit; transition: 0.3s; }
+        ul { list-style: none; }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* --- HEADER --- */
+        header {
+            padding: 20px 0;
+            background-color: rgba(15, 23, 42, 0.95);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo { font-size: 1.5rem; font-weight: 700; letter-spacing: -1px; }
+        .logo span { color: var(--primary-color); }
+
+        .nav-links { display: flex; gap: 30px; }
+        .nav-links a:hover { color: var(--primary-color); }
+
+        .btn-cta {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 10px 25px;
+            border-radius: 5px;
+            font-weight: 600;
+        }
+        .btn-cta:hover { background-color: #1d4ed8; transform: translateY(-2px); }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: radial-gradient(circle at center, #1e293b 0%, #020617 100%);
+            padding-top: 80px;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            background: -webkit-linear-gradient(#fff, #94A3B8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            color: var(--text-gray);
+            margin-bottom: 40px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .platforms i { font-size: 2rem; margin: 0 15px; color: var(--text-gray); }
+
+        /* --- SOBRE --- */
+        .about { padding: 80px 0; background-color: var(--darker-bg); }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        .section-title h2 { font-size: 2.5rem; margin-bottom: 10px; }
+        .section-title p { color: var(--primary-color); font-weight: 600; text-transform: uppercase; letter-spacing: 2px; font-size: 0.9rem; }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-text h3 { font-size: 1.8rem; margin-bottom: 20px; }
+        .stats {
+            display: flex;
+            gap: 40px;
+            margin-top: 30px;
+        }
+        .stat-item h4 { font-size: 2rem; color: var(--primary-color); }
+        .stat-item p { font-size: 0.9rem; color: var(--text-gray); }
+
+        /* --- EXPERTISE (CARDS) --- */
+        .expertise { padding: 100px 0; }
+        
+        .grid-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: #1E293B;
+            padding: 30px;
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.05);
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary-color);
+        }
+
+        .card i {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        .card h3 { margin-bottom: 10px; font-size: 1.3rem; }
+        .card p { color: var(--text-gray); font-size: 0.95rem; }
+
+        /* --- CTA FINAL --- */
+        .final-cta {
+            padding: 80px 0;
+            text-align: center;
+            background: linear-gradient(90deg, #0F172A 0%, #1e293b 100%);
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .btn-whatsapp {
+            background-color: #25D366;
+            color: white;
+            padding: 15px 40px;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        .btn-whatsapp:hover { background-color: #1ebc57; transform: scale(1.05); }
+
+        /* --- FOOTER --- */
+        footer {
+            padding: 40px 0;
+            text-align: center;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            color: var(--text-gray);
+            font-size: 0.9rem;
+        }
+
+        /* RESPONSIVO */
+        @media (max-width: 768px) {
+            .hero-content h1 { font-size: 2.5rem; }
+            .about-grid { grid-template-columns: 1fr; }
+            .nav-links { display: none; } /* Simplificado para mobile */
+            .logo { font-size: 1.2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">Guilherme<span>Ady</span>.</div>
+                <ul class="nav-links">
+                    <li><a href="#sobre">Sobre</a></li>
+                    <li><a href="#expertise">Especialidades</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+                <a href="https://wa.me/55319446264" class="btn-cta">Falar no WhatsApp</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container hero-content">
+            <h1>Escale suas vendas com<br>Tráfego Pago Inteligente</h1>
+            <p>Especialista em Meta Ads e Google Ads desde 2019. Transformo cliques em lucro para lançamentos, infoprodutos e negócios locais.</p>
+            
+            <a href="https://wa.me/55319446264" class="btn-cta" style="padding: 15px 40px; font-size: 1.1rem;">
+                Quero Escalar Meu Negócio
+            </a>
+
+            <div class="platforms" style="margin-top: 40px;">
+                <i class="fab fa-facebook"></i>
+                <i class="fab fa-instagram"></i>
+                <i class="fab fa-google"></i>
+                <i class="fab fa-youtube"></i>
+            </div>
+        </div>
+    </section>
+
+    <section id="sobre" class="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-text">
+                    <p style="color: var(--primary-color); font-weight: 600;">QUEM SOU EU</p>
+                    <h3>Guilherme Ady</h3>
+                    <p style="color: var(--text-gray);">
+                        Atuo no mercado digital desde 2019, gerenciando campanhas que geram resultados reais. Não vendo cliques, vendo estratégia de aquisição de clientes.
+                    </p>
+                    <br>
+                    <p style="color: var(--text-gray);">
+                        Minha metodologia combina análise de dados fria com criativos de alta conversão. Seja para escalar um infoproduto ou lotar a agenda de um negócio local, o foco é sempre o ROAS (Retorno sobre o Investimento).
+                    </p>
+
+                    <div class="stats">
+                        <div class="stat-item">
+                            <h4>+4</h4>
+                            <p>Anos de Exp.</p>
+                        </div>
+                        <div class="stat-item">
+                            <h4>Múltiplos</h4>
+                            <p>Nichos Atendidos</p>
+                        </div>
+                    </div>
+                </div>
+                <div style="background: #1E293B; height: 300px; width: 100%; border-radius: 10px; display: flex; align-items: center; justify-content: center; border: 2px dashed #334155;">
+                    <span style="color: #64748B;">Sua Foto Aqui (600x600)</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="expertise" class="expertise">
+        <div class="container">
+            <div class="section-title">
+                <p>O QUE EU FAÇO</p>
+                <h2>Minhas Áreas de Domínio</h2>
+            </div>
+
+            <div class="grid-cards">
+                <div class="card">
+                    <i class="fas fa-rocket"></i>
+                    <h3>Lançamentos</h3>
+                    <p>Estratégias de captação de leads (CPL), remarketing agressivo e debriefing de dados para lançamentos semente, interno ou meteórico.</p>
+                </div>
+
+                <div class="card">
+                    <i class="fas fa-pills"></i>
+                    <h3>Encapsulados</h3>
+                    <p>Tráfego direto para página de vendas (Vilas). Domínio de contingência, testes de criativos e ofertas Black/White.</p>
+                </div>
+
+                <div class="card">
+                    <i class="fas fa-laptop-code"></i>
+                    <h3>Infoprodutos</h3>
+                    <p>Venda perpétua e funis automáticos. Otimização constante para reduzir o CAC e aumentar o LTV do seu produto digital.</p>
+                </div>
+
+                <div class="card">
+                    <i class="fas fa-store"></i>
+                    <h3>Negócio Local</h3>
+                    <p>Campanhas de mensagem e geolocalização para trazer o cliente da internet para dentro da sua loja ou escritório.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contato" class="final-cta">
+        <div class="container">
+            <h2>Pronto para escalar seus resultados?</h2>
+            <p style="margin-top: 15px; color: var(--text-gray);">Vamos analisar o seu cenário atual e traçar um plano de tráfego.</p>
+            <a href="https://wa.me/553194446264" class="btn-whatsapp">
+                <i class="fab fa-whatsapp"></i> Agendar Reunião
+            </a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Guilherme Ady - Gestão de Tráfego. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
